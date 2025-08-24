@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - redis_data:/data
+
+  postgres:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ecommerce_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        MEDIATR_LICENSE_KEY: ${MEDIATR_LICENSE_KEY}
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      Jwt__Issuer: "Shop.Api"
+      Jwt__Audience: "Shop.Api.Client"
+      Jwt__Key: "CHANGE_ME_SUPER_SECRET_KEY_32CHARS_MINIMUM"
+      ConnectionStrings__Redis: "redis:6379"
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=ecommerce_db;Username=user;Password=password"
+      MEDIATR_LICENSE_KEY: ${MEDIATR_LICENSE_KEY}
+    ports:
+      - "7240:8080"  # host:container
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_started
+
+volumes:
+  redis_data:
+  postgres_data:

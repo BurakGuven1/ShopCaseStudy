@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Error_Generic" xml:space="preserve">
+    <value>An unexpected error occurred. Please contact support and provide the trace ID.</value>
+    <comment>A generic fallback error for unhandled exceptions.</comment>
+  </data>
+	<data name="Error_Unauthorized" xml:space="preserve">
+    <value>Authentication is required to access this resource.</value>
+    <comment>For actions requiring a valid JWT token when none is provided or it's invalid.</comment>
+  </data>
+	<data name="Error_Forbidden" xml:space="preserve">
+    <value>You do not have permission to perform this action.</value>
+    <comment>When an authenticated user lacks the required roles or claims (e.g., a User trying an Admin action).</comment>
+  </data>
+	<data name="Error_Validation" xml:space="preserve">
+    <value>One or more validation errors occurred.</value>
+    <comment>The main title for a 400 Bad Request due to validation failures. Details will be in the response body.</comment>
+  </data>
+
+	<data name="Error_ResourceNotFound" xml:space="preserve">
+    <value>The requested resource could not be found.</value>
+    <comment>A generic message for when a resource is not found.</comment>
+  </data>
+	<data name="Error_ProductNotFound" xml:space="preserve">
+    <value>The product with the specified ID was not found.</value>
+    <comment>Specific error for when a product lookup fails.</comment>
+  </data>
+	<data name="Error_OrderNotFound" xml:space="preserve">
+    <value>The order with the specified ID was not found.</value>
+    <comment>Specific error for when an order lookup fails.</comment>
+  </data>
+
+	<data name="Error_Conflict" xml:space="preserve">
+    <value>A conflict occurred with the current state of the resource.</value>
+    <comment>A generic message for state-related conflicts.</comment>
+  </data>
+	<data name="Error_OrderShippedCannotCancel" xml:space="preserve">
+    <value>The order cannot be canceled because it has already been shipped.</value>
+    <comment>Specific domain rule violation for canceling a shipped order.</comment>
+  </data>
+
+	<data name="Error_InvalidCredentials" xml:space="preserve">
+    <value>Invalid email or password.</value>
+    <comment>For failed login attempts.</comment>
+  </data>
+</root>

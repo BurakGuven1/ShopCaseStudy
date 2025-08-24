@@ -1,0 +1,80 @@
+name: CI (.NET 9 build + tests)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: shop_db
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U user -d shop_db"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping || exit 1"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+
+    env:
+      MEDIATR_LICENSE_KEY: ${{ secrets.MEDIATR_LICENSE_KEY }}
+
+      Jwt__Issuer: "Shop.Api"
+      Jwt__Audience: "Shop.Api.Client"
+      Jwt__Key: "TEST_KEY_0123456789_0123456789_012345"
+
+      # Integration test’ler Postgres/Redis’e bağlansın
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=shop_db;Username=user;Password=password"
+      ConnectionStrings__Redis: "127.0.0.1:6379,abortConnect=false"
+
+      # Otomatik migration ve testlerde limit’i kapatma
+      AUTO_MIGRATE: "true"
+      DISABLE_RATE_LIMITING: "true"
+
+      ASPNETCORE_ENVIRONMENT: "Test"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: (Opsiyonel) Servisler hazır mı kısa bekle
+        shell: bash
+        run: |
+          for i in {1..30}; do
+            (echo > /dev/tcp/127.0.0.1/5432) >/dev/null 2>&1 && break
+            sleep 1
+          done
+          for i in {1..30}; do
+            (echo > /dev/tcp/127.0.0.1/6379) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build (Release)
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test (Release)
+        run: dotnet test --configuration Release --no-build --collect "XPlat Code Coverage"

@@ -1,0 +1,11 @@
+bin/
+obj/
+**/bin/
+**/obj/
+TestResults/
+logs/
+**/logs/
+*.user
+*.suo
+.DS_Store
+.env
