@@ -102,16 +102,17 @@ jobs:
           done
 
       - name: Install dotnet-ef
-        run: dotnet tool update -g dotnet-ef
+        run: dotnet tool install --global dotnet-ef
+
+      - name: Add dotnet-ef to PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
       - name: Apply EF migrations
-        env:
-          PATH: $HOME/.dotnet/tools:$PATH
         run: |
-          # Proje yollarını kendi repo yapına göre tutuyoruz:
           dotnet ef database update \
             --project ./src/Infrastructure/Infrastructure.csproj \
             --startup-project ./src/Api/Api.csproj
+
 
       - name: Run IntegrationTests
         run: dotnet test ./tests/IntegrationTests/IntegrationTests.csproj -c Release --no-build --logger "trx;LogFileName=integration.trx"
