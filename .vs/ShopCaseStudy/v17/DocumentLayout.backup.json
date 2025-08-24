@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\burak\\ShopCaseStudy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{5B0968A1-D6A3-49C8-A0DD-2D6D65A9DFDC}|src\\Domain\\Domain.csproj|c:\\users\\burak\\shopcasestudy\\src\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0968A1-D6A3-49C8-A0DD-2D6D65A9DFDC}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\controllers\\healthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|c:\\users\\burak\\shopcasestudy\\src\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1E6778FC-C309-4886-AC1C-2FCAE12693BA}|src\\Api\\Api.csproj|solutionrelative:src\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CF72C2E-85E0-4655-9834-68B4837FE03D}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\burak\\shopcasestudy\\src\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,41 +38,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\appsettings.json",
+              "RelativeToolTip": "src\\Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-24T22:05:57.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Domain\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "src\\Domain\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\burak\\ShopCaseStudy\\src\\Domain\\Entities\\Order.cs",
+              "RelativeToolTip": "src\\Domain\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T21:46:54.779Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "HealthController.cs",
               "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Controllers\\HealthController.cs",
               "RelativeDocumentMoniker": "src\\Api\\Controllers\\HealthController.cs",
               "ToolTip": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Controllers\\HealthController.cs",
               "RelativeToolTip": "src\\Api\\Controllers\\HealthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-24T21:11:31.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "src\\Api\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "src\\Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T20:49:51.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Api.csproj",
               "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Api.csproj",
               "RelativeDocumentMoniker": "src\\Api\\Api.csproj",
@@ -81,20 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\Api\\Program.cs",
               "ToolTip": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Program.cs",
               "RelativeToolTip": "src\\Api\\Program.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAtwLIAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-24T19:53:02.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Users\\burak\\ShopCaseStudy\\src\\Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\DependencyInjection.cs",
@@ -112,9 +129,10 @@
               "RelativeDocumentMoniker": "src\\Api\\Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Users\\burak\\ShopCaseStudy\\src\\Api\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "src\\Api\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T20:19:35.804Z"
+              "WhenOpened": "2025-08-24T20:19:35.804Z",
+              "EditorCaption": ""
             }
           ]
         }
