@@ -1,4 +1,4 @@
-﻿using Application.Abstractions;
+using Application.Abstractions;
 using Application.Abstractions.Identity;
 using Application.Abstractions.Persistence;
 using Application.Abstractions.Security;
@@ -82,10 +82,10 @@ public static class DependencyInjection
         var issuer = jwt["Issuer"] ?? throw new InvalidOperationException("Jwt:Issuer missing");
         var audience = jwt["Audience"] ?? throw new InvalidOperationException("Jwt:Audience missing");
         var key = jwt["Key"] ?? throw new InvalidOperationException("Jwt:Key missing");
-        if (key.Length < 32) throw new InvalidOperationException("Jwt:Key too short (>=32)");
+		var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-        var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-        services.AddScoped<IIdentityService, IdentityService>();
+		var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+		services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<IJwtTokenGenerator>(_ => new JwtTokenGenerator(issuer, audience, signingKey));
 
         services.AddHostedService<RoleSeedHostedService>();

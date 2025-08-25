@@ -1,5 +1,9 @@
 using Api.Auth;
 using Api.Middlewares;
+using Application;
+using Infrastructure;
+using Infrastructure.Health;
+using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -13,9 +17,6 @@ using Serilog;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using System.Text;
-using Infrastructure;
-using Application;
-using Infrastructure.Health;
 
 var builder = WebApplication.CreateBuilder(args);
 

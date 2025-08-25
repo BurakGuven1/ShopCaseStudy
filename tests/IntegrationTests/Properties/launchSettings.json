@@ -1,0 +1,13 @@
+{
+	"profiles": {
+		"IntegrationTests": {
+			"commandName": "Project",
+			"environmentVariables": {
+				"Jwt__Issuer": "Shop.Api",
+				"Jwt__Audience": "Shop.Api.Client",
+				"Jwt__Key": "INSECURE_CI_ONLY_32CHARS_MINIMUM_123456",
+				"DISABLE_RATE_LIMITING": "true"
+			}
+		}
+	}
+}

@@ -1,39 +1,49 @@
-﻿using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
-namespace IntegrationTests;
-
-internal static class TestAuth
+public static class TestAuth
 {
-    private const string Issuer = "Shop.Api";
-    private const string Audience = "Shop.Api.Client";
-    private const string Key = "CHANGE_ME_SUPER_SECRET_KEY_32CHARS_MINIMUM";
+	public static string CreateJwt(Guid userId, string? role = null)
+	{
+		var issuer = Environment.GetEnvironmentVariable("Jwt__Issuer") ?? "Shop.Api";
+		var audience = Environment.GetEnvironmentVariable("Jwt__Audience") ?? "Shop.Api.Client";
+		var key = Environment.GetEnvironmentVariable("Jwt__Key") ?? "INTEGRATION_TESTS_ONLY_32_CHARS_MINIMUM_123456";
 
-    internal static string CreateJwt(Guid userId, bool admin = false, IEnumerable<Claim>? extraClaims = null)
-    {
-        var claims = new List<Claim>
-        {
-            new(ClaimTypes.NameIdentifier, userId.ToString())
-        };
-        if (admin) claims.Add(new(ClaimTypes.Role, "Admin"));
-        if (extraClaims is not null) claims.AddRange(extraClaims);
+		var creds = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)), SecurityAlgorithms.HmacSha256);
 
-        var creds = new SigningCredentials(
-            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key)),
-            SecurityAlgorithms.HmacSha256);
+		var claims = new[]
+		{
+			new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
+			new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+			new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+		};
 
-        var token = new JwtSecurityToken(
-            issuer: Issuer,
-            audience: Audience,
-            claims: claims,
-            notBefore: DateTime.UtcNow.AddMinutes(-1),
-            expires: DateTime.UtcNow.AddHours(1),
-            signingCredentials: creds);
+		var handler = new JwtSecurityTokenHandler();
+		var token = new JwtSecurityToken(
+			issuer: issuer,
+			audience: audience,
+			claims: role is null ? claims : Append(claims, new Claim(ClaimTypes.Role, role)),
+			expires: DateTime.UtcNow.AddHours(1),
+			signingCredentials: creds);
 
-        return new JwtSecurityTokenHandler().WriteToken(token);
-    }
+		return handler.WriteToken(token);
+	}
+
+	private static T[] Append<T>(T[] source, T item)
+	{
+		var arr = new T[source.Length + 1];
+		Array.Copy(source, arr, source.Length);
+		arr[^1] = item;
+		return arr;
+	}
+}
+
+public static class HttpClientJwtExtensions
+{
+	public static void UseJwt(this System.Net.Http.HttpClient client, string jwt)
+		=> client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
 }
