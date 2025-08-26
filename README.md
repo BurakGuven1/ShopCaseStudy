@@ -33,7 +33,7 @@ Proje, **Clean Architecture** prensipleri doğrultusunda katmanlı mimari ile ge
 - **Docker** (Containerization)
 ## 🔧 Kurulum ve Çalıştırma
 ### Önkoşullar
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Docker](https://www.docker.com/products/docker-desktop) (Opsiyonel, container için)
 - [PostgreSQL](https://www.postgresql.org/download/) (Opsiyonel, local development için)
 - [Redis](https://redis.io/download) (Opsiyonel, local development için)
